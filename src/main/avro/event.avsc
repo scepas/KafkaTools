@@ -1,0 +1,16 @@
+{
+  "type": "record",
+  "name": "EventPrueba",
+  "namespace": "com.cepas.events.avro",
+  "doc": "Evento avro de prueba",
+  "fields": [
+    {
+      "name": "nombre",
+      "type": "string"
+    },
+    {
+      "name": "edad",
+      "type": "int"
+    }
+  ]
+}

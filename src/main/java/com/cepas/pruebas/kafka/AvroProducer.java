@@ -38,7 +38,7 @@ public class AvroProducer {
                 out.close();
                 record = new ProducerRecord<>(topic, null, out.toByteArray());
                 producer.send(record);
-                System.out.println(String.format("generado evento %s", name));
+                System.out.println(String.format("generating event #%s", name));
                 Thread.sleep(100);
             } catch (IOException | InterruptedException e) {
                 e.printStackTrace();
