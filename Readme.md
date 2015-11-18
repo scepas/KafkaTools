@@ -1,11 +1,12 @@
 ## KafkaManager
 
 Simple tool that:
-    - Produces simple test events to a Kafka topic
-    - Produces avro events
-    - Consumes avro events
 
-To test Kafka I used [Kafka Docker](http://wurstmeister.github.io/kafka-docker/):
+- Produces simple test events to a Kafka topic
+- Produces avro events
+- Consumes avro events
+
+To test Kafka I used [Kafka Docker](http://wurstmeister.github.io/kafka-docker/).
 
 ### Build
 
