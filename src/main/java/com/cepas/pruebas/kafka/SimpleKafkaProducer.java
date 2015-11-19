@@ -21,21 +21,21 @@ public class SimpleKafkaProducer {
     private void run(Properties props, String topic) {
         KafkaProducer<String, String> producer = new KafkaProducer<>(props);
         for (int i = 0; i < 100; i++){
-            String msg = String.format("message: %d", i);
-            ProducerRecord<String, String> data = new ProducerRecord<>(topic, String.valueOf(i), msg);
+            String message = String.format("message: %d", i);
+            ProducerRecord<String, String> data = new ProducerRecord<>(topic, String.valueOf(i), message);
             Future<RecordMetadata> rs = producer.send(data, new Callback() {
                 @Override
-                public void onCompletion(RecordMetadata recordMetadata, Exception e) {
-                    System.out.println("Received ack for partition=" + recordMetadata.partition() + " offset = " + recordMetadata.offset()) ;
+                public void onCompletion(RecordMetadata rm, Exception e) {
+                    System.out.println("Partition: " + rm.partition() + " - offset = " + rm.offset()) ;
                 }
             });
 
             try {
                 RecordMetadata rm = rs.get();
-                msg = msg + "  partition = " + rm.partition() +  " offset =" + rm.offset() ;
-                System.out.println(msg) ;
-            } catch(Exception e) {
-                System.out.println(e) ;
+                message = message + "  partition = " + rm.partition() +  " offset =" + rm.offset() ;
+                System.out.println(message) ;
+            } catch(Exception ex) {
+                System.out.println(ex) ;
             }
         }
         producer.close();
