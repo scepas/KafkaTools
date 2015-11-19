@@ -3,6 +3,7 @@
 Simple tool that:
 
 - Produces simple test events to a Kafka topic
+- Consume test events
 - Produces avro events
 - Consumes avro events
 
@@ -55,5 +56,5 @@ Clean up
 `docker-compose rm`
 
 ### TODO
-- Text consumer
 - Test decimal data type
+- Generic Avro API

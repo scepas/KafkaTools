@@ -77,7 +77,12 @@ public class KafkaManager {
             }
         }
         else    {
-            new AvroConsumer(props, topic, group);
+            if (isAvro) {
+                new AvroConsumer(props, topic, group);
+            }
+            else    {
+                new SimpleKafkaConsumer(props, topic, group);
+            }
         }
     }
 
