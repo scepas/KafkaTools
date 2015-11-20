@@ -70,8 +70,6 @@
                 <archive>
                     <manifest>
                         <addClasspath>true</addClasspath>
-                        <!--<mainClass>com.cepas.pruebas.kafka.SimpleKafkaProducer</mainClass>-->
-                        <!--mainClass>com.cepas.pruebas.kafka.AvroProducer</mainClass-->
                         <mainClass>com.cepas.pruebas.kafka.KafkaManager</mainClass>
                         <classpathPrefix>lib/</classpathPrefix>
                     </manifest>
